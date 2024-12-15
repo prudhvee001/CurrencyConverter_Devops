@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Basic project information -->
+    <groupId>com.example</groupId>
+    <artifactId>sample-webapp</artifactId>
+    <version>1.0.0</version>
+    <packaging>war</packaging> <!-- Specify WAR packaging type -->
+
+    <name>Sample Web Application</name>
+    <url>http://www.example.com</url>
+
+    <!-- Dependencies (Add your dependencies here) -->
+    <dependencies>
+        <!-- Example: Servlet API, necessary for web applications -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope> <!-- Provided by the servlet container (e.g., Tomcat) -->
+        </dependency>
+
+        <!-- Example: JUnit for testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Add other dependencies as needed -->
+    </dependencies>
+
+    <!-- Build configuration for packaging WAR file -->
+    <build>
+        <finalName>sample-webapp</finalName> <!-- Final name of the WAR file -->
+
+        <!-- Plugins for compiling and building the WAR file -->
+        <plugins>
+            <!-- Maven WAR Plugin to create the WAR file -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <webXml>src/main/webapp/WEB-INF/web.xml</webXml> <!-- Location of web.xml -->
+                </configuration>
+            </plugin>
+
+            <!-- Optional: Maven Compiler Plugin to set Java version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source> <!-- Java version -->
+                    <target>1.8</target> <!-- Java target version -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
